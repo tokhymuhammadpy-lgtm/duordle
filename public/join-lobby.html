@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Join a Lobby — Duordle</title>
+  <meta name="description" content="Browse open public Duordle lobbies, filter by player count or word length, or join a private lobby with its 4-character ID." />
+  <link rel="canonical" href="https://your-domain-here.example/join-lobby.html" />
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="/styles/main.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="logo-mark" aria-hidden="true">
+      <span></span><span></span><span></span>
+      <span></span><span class="filled-yellow"></span><span></span>
+      <span></span><span class="filled-green"></span><span></span>
+    </div>
+    <span class="site-title">Duordle</span>
+  </header>
+
+  <main>
+    <nav class="breadcrumbs"><a href="/">Home</a> / Join a lobby</nav>
+    <div class="page-container" style="max-width:560px;">
+      <h1 style="font-size:1.8rem;">Join a lobby</h1>
+
+      <div class="filters-row">
+        <button class="btn btn-secondary" id="filters-btn" type="button">Filters</button>
+        <button class="btn btn-secondary" id="use-id-btn" type="button">Use ID</button>
+      </div>
+
+      <div id="filters-box" class="field" style="display:none; border:1px solid var(--color-border); padding:12px; border-radius:var(--radius);">
+        <label for="filter-players">Max players</label>
+        <select id="filter-players">
+          <option value="">Any</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+        </select>
+        <label for="filter-length" style="margin-top:10px;">Word length</label>
+        <select id="filter-length">
+          <option value="">Any</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10</option>
+        </select>
+        <button class="btn" id="apply-filters-btn" style="margin-top:12px;">Apply</button>
+      </div>
+
+      <ul class="lobby-list" id="lobby-list"></ul>
+      <div class="empty-state" id="empty-state" style="display:none;">There's no lobbies</div>
+    </div>
+  </main>
+
+  <div class="modal-overlay" id="use-id-modal" style="display:none;">
+    <div class="modal-box">
+      <h2 style="margin-top:0;">Enter lobby ID</h2>
+      <div class="field">
+        <input type="text" id="lobby-id-input" maxlength="4" autocomplete="off" placeholder="e.g. 9fQ2" style="text-align:center; font-family:monospace; font-size:1.3rem; letter-spacing:0.2em;" />
+      </div>
+      <button class="btn" id="submit-id-btn">Join</button>
+      <button class="btn btn-secondary" id="cancel-id-btn">Cancel</button>
+    </div>
+  </div>
+
+  <div class="toast" id="toast" style="display:none;"></div>
+
+  <footer class="site-footer">
+    <span>Duordle</span>
+    <a href="/privacy-policy.html">Privacy Policy</a>
+  </footer>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="/scripts/socket-client.js"></script>
+  <script src="/scripts/join-lobby.js"></script>
+</body>
+</html>

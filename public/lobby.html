@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lobby — Duordle</title>
+  <meta name="description" content="Waiting room for your Duordle lobby — share the ID with friends and wait for the host to start." />
+  <link rel="canonical" href="https://your-domain-here.example/lobby.html" />
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="/styles/main.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="logo-mark" aria-hidden="true">
+      <span></span><span></span><span></span>
+      <span></span><span class="filled-yellow"></span><span></span>
+      <span></span><span class="filled-green"></span><span></span>
+    </div>
+    <span class="site-title">Duordle</span>
+  </header>
+
+  <main>
+    <div class="page-container">
+      <h1 style="font-size:1.8rem;">Lobby <span id="lobby-id-display" style="font-family:monospace;"></span></h1>
+      <p class="hint-text" id="visibility-note"></p>
+      <p class="subtitle" id="share-note" style="font-size:0.95rem;"></p>
+
+      <p class="hint-text"><strong>Word length:</strong> <span id="setting-length"></span> &middot;
+        <strong>Rounds:</strong> <span id="setting-rounds"></span> &middot;
+        <strong>Max players:</strong> <span id="setting-maxplayers"></span></p>
+
+      <ul class="lobby-list" id="player-list" style="margin-top:20px;"></ul>
+
+      <button class="btn" id="start-btn" style="display:none;">Start game</button>
+      <p class="hint-text" id="waiting-note">Waiting for the host to start the game...</p>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <span>Duordle</span>
+    <a href="/privacy-policy.html">Privacy Policy</a>
+  </footer>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="/scripts/socket-client.js"></script>
+  <script src="/scripts/lobby-room.js"></script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Playing — Duordle</title>
+  <meta name="description" content="Race your lobby to guess the word in a live Duordle match." />
+  <link rel="canonical" href="https://your-domain-here.example/game.html" />
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="/styles/main.css" />
+  <link rel="stylesheet" href="/styles/game.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="logo-mark" aria-hidden="true">
+      <span></span><span></span><span></span>
+      <span></span><span class="filled-yellow"></span><span></span>
+      <span></span><span class="filled-green"></span><span></span>
+    </div>
+    <span class="site-title">Duordle</span>
+    <button class="btn btn-secondary opponents-toggle" id="opponents-toggle-btn" type="button" style="width:auto; margin-left:16px; padding:6px 12px; font-size:0.8rem;">Players</button>
+  </header>
+
+  <main>
+    <div class="game-layout">
+      <aside class="opponents-panel" id="opponents-panel">
+        <h2>Lobby</h2>
+        <div id="opponents-container"></div>
+      </aside>
+
+      <section class="own-game">
+        <div class="round-info" id="round-info"></div>
+        <div class="board" id="board"></div>
+        <div class="keyboard" id="keyboard"></div>
+      </section>
+    </div>
+  </main>
+
+  <div class="modal-overlay" id="round-result-modal" style="display:none;">
+    <div class="modal-box" style="max-width:420px;">
+      <h2 id="result-heading" style="margin-top:0;">Round over</h2>
+      <p class="word-reveal">The word was <strong id="result-word"></strong></p>
+      <ul class="ranking-list" id="ranking-list"></ul>
+      <button class="btn" id="next-round-btn" style="display:none;">Next round</button>
+      <button class="btn" id="play-again-btn" style="display:none;">Play again</button>
+      <a href="/" class="hint-text" style="display:block; margin-top:14px;">Back to home</a>
+    </div>
+  </div>
+
+  <div class="toast" id="toast" style="display:none;"></div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="/scripts/socket-client.js"></script>
+  <script src="/scripts/game.js"></script>
+</body>
+</html>

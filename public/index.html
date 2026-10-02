@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Duordle — Play Online Wordle With Friends</title>
+  <meta name="description" content="Duordle is a free online multiplayer word-guessing game. Create a lobby, invite friends with a 4-character ID, or join a public match and race to guess the word." />
+  <link rel="canonical" href="https://your-domain-here.example/" />
+  <meta property="og:title" content="Duordle — Play Online Wordle With Friends" />
+  <meta property="og:description" content="Create or join a lobby and race your friends to guess the word." />
+  <meta property="og:image" content="/assets/social-share.png" />
+  <meta property="og:type" content="website" />
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="/styles/main.css" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Duordle",
+    "applicationCategory": "Game",
+    "operatingSystem": "Any (web browser)",
+    "description": "A free online multiplayer word-guessing game inspired by Wordle."
+  }
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="logo-mark" aria-hidden="true">
+      <span></span><span></span><span></span>
+      <span></span><span class="filled-yellow"></span><span></span>
+      <span></span><span class="filled-green"></span><span></span>
+    </div>
+    <span class="site-title">Duordle</span>
+  </header>
+
+  <main>
+    <div class="page-container">
+      <h1>Hi Duordle</h1>
+      <p class="subtitle">Play online Wordle with friends — or strangers.</p>
+
+      <div class="field">
+        <label for="username-input">Choose a username</label>
+        <input type="text" id="username-input" maxlength="16" autocomplete="off" placeholder="e.g. doom_2" />
+        <div class="error-text" id="username-error"></div>
+      </div>
+
+      <button class="btn" id="create-btn" disabled>Create your own lobby</button>
+      <button class="btn btn-secondary" id="join-btn" disabled>Join a lobby</button>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <span>Duordle</span>
+    <a href="/privacy-policy.html">Privacy Policy</a>
+  </footer>
+
+  <script src="/scripts/main.js"></script>
+</body>
+</html>
